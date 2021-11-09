@@ -3,10 +3,10 @@
 // import 'firebase/firestore';
 // import 'firebase/auth';
 
-import firebase from 'firebase/compat/app'; //v9
-import 'firebase/compat/auth'; //v9
-import 'firebase/compat/firestore'; //v9
-
+// v9
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const config = {
     apiKey: "AIzaSyAWbZVY6ecwTB1U6G-M1hbzcOwKlYjX-Nk",
@@ -42,7 +42,6 @@ export const createUserProfileFirebaseDocument = async (userAuth, additionalData
 
     return userRef;
 };
-
 
 firebase.initializeApp(config);
 
