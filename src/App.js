@@ -2,7 +2,7 @@ import React from 'react';
 import {Navigate, Route, Routes} from 'react-router-dom';
 
 import {connect} from "react-redux";
-import {setCurrentUser} from "./redux/user/user.action";
+import {setCurrentUser} from "./redux/user/user.actions";
 
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
