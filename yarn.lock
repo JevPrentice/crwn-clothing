@@ -5605,6 +5605,7 @@ __metadata:
     react-scripts: 4.0.3
     redux: ^4.1.2
     redux-logger: ^3.0.6
+    reselect: ^4.1.2
     sass: ^1.43.4
     web-vitals: ^0.2.4
     workbox-background-sync: ^5.1.3
@@ -13577,6 +13578,13 @@ __metadata:
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
   checksum: eee0e303adffb69be55d1a214e415cf42b7441ae858c76dfc5353148644f6fd6e698926fc4643f510d5c126d12a705e7c8ed7e38061113bdf37547ab356797ff
+  languageName: node
+  linkType: hard
+
+"reselect@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "reselect@npm:4.1.2"
+  checksum: 5a702af37e7fa5e58e8b0787b8a1668df2eff527f1eb2cb2bd81416db6947064a922b41f28a522016df6e5e2dbc5f8588ff0749dcf3c06daae0e0cc3baffec99
   languageName: node
   linkType: hard
 
