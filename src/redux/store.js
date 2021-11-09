@@ -10,4 +10,7 @@ export const store = createStore(rootReducer, applyMiddleware(logger))
 
 export const persistor = persistStore(store);
 
-export default {store, persistor};
+const reduxStore = {store, persistor};
+
+export default reduxStore;
+
