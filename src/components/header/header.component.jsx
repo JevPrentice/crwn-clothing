@@ -17,10 +17,10 @@ const Header = ({currentUser, hidden}) =>
             <Logo className='logo'/>
         </Link>
         <div className='options'>
-            <Link className='options' to='/shop'>
+            <Link className='option' to='/shop'>
                 SHOP
             </Link>
-            <Link className='options' to='/content'>
+            <Link className='option' to='/content'>
                 CONTENT
             </Link>
             {
