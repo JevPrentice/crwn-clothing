@@ -5604,6 +5604,7 @@ __metadata:
     react-redux: ^7.2.6
     react-router-dom: ^6.0.1
     react-scripts: 4.0.3
+    react-stripe-checkout: ^2.6.3
     redux: ^4.1.2
     redux-logger: ^3.0.6
     redux-persist: ^6.0.0
@@ -13208,6 +13209,13 @@ __metadata:
   bin:
     react-scripts: ./bin/react-scripts.js
   checksum: a05a46ce3145b42ac8b57633d3b90b6689c24697c1449bccf219349996d718a3cd0796e4910f4ab6abb5b024982cafd62345e88c8e7b42a45efca3bef1a0eb87
+  languageName: node
+  linkType: hard
+
+"react-stripe-checkout@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "react-stripe-checkout@npm:2.6.3"
+  checksum: 0640fd0d4ebc72a3b83c71019224feaa0e1befdf2c236ee7422e0121f4295be162a0d3ddb8c7509aa7abc5646e00f2b6ca7b1189c71d5cdc7809f789dc31dbb6
   languageName: node
   linkType: hard
 
