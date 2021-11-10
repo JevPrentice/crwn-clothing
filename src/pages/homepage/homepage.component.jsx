@@ -5,9 +5,7 @@ import {HomePageContainer} from "./homepage.styles";
 
 const HomePage = () =>
     <HomePageContainer>
-        <div className='directory-menu'>
-            <Directory/>
-        </div>
+        <Directory/>
     </HomePageContainer>;
 
 export default HomePage;
