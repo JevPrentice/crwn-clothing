@@ -20,3 +20,10 @@ export const selectCollection = memoize(collectionUrlParam =>
                 : null)
     // lodash.memoize: here we are memoizing the return of our function
 );
+
+export const selectIsCollectionFetching = createSelector([selectShop], shop => shop.isFetching);
+
+export const selectIsCollectionsLoaded = createSelector([selectShop],
+    shop => !!shop.collections);
+
+// double bang !! does a falsely check on the value and returns a boolean value
