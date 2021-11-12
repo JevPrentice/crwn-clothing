@@ -56,9 +56,9 @@ export function* onCheckUserSession() {
 export function* signOut() {
     try {
         yield auth.signOut();
-        yield (put(signOutSuccess()))
+        yield put(signOutSuccess());
     } catch (error) {
-        yield (put(signoutFailure(error)))
+        yield put(signoutFailure(error));
     }
 }
 
@@ -68,5 +68,5 @@ export function* onSignOutStart() {
 
 export function* userSagas() {
     yield all([call(onGoogleSignInStart), call(onEmailSignInStart),
-        call(onCheckUserSession), call(onSignOutStart)])
+        call(onCheckUserSession), call(onSignOutStart)]);
 }
