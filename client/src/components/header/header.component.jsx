@@ -1,18 +1,19 @@
-import React from "react"
-import {useDispatch, useSelector} from "react-redux"
+import React, {useContext} from "react"
+import {useDispatch} from "react-redux"
 import {ReactComponent as Logo} from "../../assets/crown.svg";
 
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
-import {selectCurrentUser} from "../../redux/user/user.selector";
-import {selectCartHidden} from "../../redux/cart/cart.selectors";
 import {HeaderContainer, LogoContainer, OptionLink, OptionsContainer} from "./header.styles";
 import {signOutStart} from "../../redux/user/user.actions";
 
+import CurrentUserContext from "../../contexts/current-user/current-user.context";
+import {CartContext} from "../../providers/cart.provider";
+
 const Header = () => {
     const dispatch = useDispatch();
-    const currentUser = useSelector(selectCurrentUser);
-    const hidden = useSelector(selectCartHidden);
+    const currentUser = useContext(CurrentUserContext);
+    const {hidden} = useContext(CartContext);
     return <HeaderContainer>
         <LogoContainer to='/'>
             <Logo className='logo'/>

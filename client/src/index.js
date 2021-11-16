@@ -7,19 +7,21 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
 import {persistor, store} from "./redux/store";
+import CartProvider from "./providers/cart.provider";
 //import {persistor, store} from "./redux/store";
 
-
 ReactDOM.render(
-    <Provider store={store}>
-        <React.StrictMode>
-            <BrowserRouter>
-                <PersistGate persistor={persistor}>
-                    <App/>
-                </PersistGate>
-            </BrowserRouter>
-        </React.StrictMode>
-    </Provider>,
+    <CartProvider>
+        <Provider store={store}>
+            <React.StrictMode>
+                <BrowserRouter>
+                    <PersistGate persistor={persistor}>
+                        <App/>
+                    </PersistGate>
+                </BrowserRouter>
+            </React.StrictMode>
+        </Provider>
+    </CartProvider>,
     document.getElementById('root')
 );
 
