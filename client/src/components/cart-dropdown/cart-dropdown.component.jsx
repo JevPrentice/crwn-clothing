@@ -1,27 +1,24 @@
-import React from "react";
+import React, {useContext} from "react";
 import CustomButton from "../custom-button/custom-button.component";
 
 import "./cart-dropdown.styles.scss";
-import {useDispatch, useSelector} from "react-redux";
 import CartItem from "../cart-item/cart-item.component";
-import {selectCartItems} from "../../redux/cart/cart.selectors";
 import {useNavigate} from "react-router-dom";
-import {toggleCartHidden} from "../../redux/cart/cart.actions";
+// import {CartContext} from "../../providers/cart.provider";
 
 const CartDropdown = () => {
     const navigate = useNavigate();
-    const cartItems = useSelector(selectCartItems);
-    const dispatch = useDispatch();
+    // const {cartItems, toggleHidden} = useContext(CartContext);
     return <div className='cart-dropdown'>
         <div className='cart-items'>
             {
-                cartItems.length
-                    ? cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem}/>)
-                    : <span className='emptyMessage'>Your cart is empty</span>
+                // cartItems.length
+                //     ? cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem}/>)
+                //     : <span className='emptyMessage'>Your cart is empty</span>
             }
         </div>
         <CustomButton onClick={() => {
-            dispatch(toggleCartHidden())
+            // toggleHidden();
             navigate("/checkout");
         }}>GO TO CHECKOUT</CustomButton>
     </div>;

@@ -1,20 +1,40 @@
 import React from "react"
 import './collection.styles.scss'
 import {useParams} from "react-router-dom";
-import {selectCollection} from "../../redux/shop/shop.selectors";
+import {gql, useQuery} from "@apollo/client";
+import Spinner from "../../components/spinner/spinner.component";
 import CollectionItem from "../../components/collection-item/collection-item.component";
-import {useSelector} from "react-redux";
+
+const GET_COLLECTION_BY_TITLE = gql`
+    query getCollectionsByTitle($title: String!) {
+        getCollectionsByTitle(title: $title) {
+            title
+            items {
+                id
+                name
+                price
+                imageUrl
+            }
+        }
+    }
+`;
 
 const CollectionPage = () => {
     const params = useParams();
-    const {collectionId} = params;
-    const collection = useSelector(selectCollection(collectionId));
-    const {title, items} = collection;
+
+    const {loading, error, data} = useQuery(GET_COLLECTION_BY_TITLE, {
+        "variables": {title: params.collectionId},
+    });
+
+    if (loading) return <Spinner/>;
+    if (error) return <p>Error : {error}</p>;
+
+    const {title, items} = data.getCollectionsByTitle;
     return <div className='collection-page'>
         <h2 className='title'>{title}</h2>
-        <div className='items'>{
-            items.map(item => <CollectionItem key={item.id} item={item}/>)
-        }</div>
+        <div className='items'>
+            {items.map(item => <CollectionItem key={item.id} item={item}/>)}
+        </div>
     </div>;
 };
 

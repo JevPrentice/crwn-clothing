@@ -2,8 +2,9 @@ import React, {useEffect} from "react"
 import {Route, Routes} from "react-router-dom";
 import {connect} from "react-redux";
 import {fetchCollectionsStart} from "../../redux/shop/shop.actions";
-import {CollectionsOverviewContainer} from "../../components/collections-overview/collections-overview.container";
-import CollectionPageContainer from "../collection/collection.container";
+
+import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container";
+import CollectionPage from "../collection/collection.component";
 
 const ShopPage = ({fetchCollectionsStart}) => {
 
@@ -12,7 +13,7 @@ const ShopPage = ({fetchCollectionsStart}) => {
     return <div className='shop-page'>
         <Routes>
             <Route path="/" element={<CollectionsOverviewContainer/>}/>
-            <Route path=':collectionId' element={<CollectionPageContainer/>}/>
+            <Route path=':collectionId' element={<CollectionPage/>}/>
         </Routes>
     </div>;
 }
