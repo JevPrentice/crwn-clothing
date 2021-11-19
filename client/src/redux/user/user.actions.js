@@ -43,8 +43,6 @@ export const signoutFailure = (error) => ({
 });
 
 export const signUpStart = (userCredentials) => {
-    console.log("asldlsak")
-    console.log(userCredentials)
     return ({
         type: UserActionTypes.SIGN_UP_START,
         payload: userCredentials
