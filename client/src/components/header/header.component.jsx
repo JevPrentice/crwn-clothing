@@ -21,9 +21,9 @@ const Header = () => {
             <OptionLink to='/shop'>
                 SHOP
             </OptionLink>
-            <OptionLink to='/content'>
-                CONTENT
-            </OptionLink>
+            {/*<OptionLink to='/content'>*/}
+            {/*    CONTENT*/}
+            {/*</OptionLink>*/}
             {
                 currentUser ?
                     <OptionLink as='div' onClick={() => dispatch(signOutStart())}> SIGN OUT </OptionLink>
