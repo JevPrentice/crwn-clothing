@@ -9,8 +9,11 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
+const compression = require('compression');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(compression);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build')));
@@ -34,7 +37,7 @@ app.post('/payment', (req, res) => {
     };
 
     stripe.charges.create(body, (stripeError, stripeRes) => {
-        if(stripeError){
+        if (stripeError) {
             res.status(500).sendStatus(stripeError);
         } else {
             res.status(200).send({success: stripeRes});
